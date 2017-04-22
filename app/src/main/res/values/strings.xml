@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Android Walkthrough</string>
+
+    <!-- categories-->
+    <string-array name="categories">
+        <item>Layouts</item>
+        <item>Core Programming</item>
+        <item>Libraries</item>
+        <item>APIs</item>
+    </string-array>
+</resources>
