@@ -5,7 +5,21 @@
     <string-array name="categories">
         <item>Layouts</item>
         <item>Core Programming</item>
-        <item>Libraries</item>
+        <item>Third Party Libraries</item>
         <item>APIs</item>
+    </string-array>
+
+    <!-- Layout Tasks-->
+    <string-array name="layoutTasks">
+        <item>Linear Layout</item>
+        <item>Relative Layout</item>
+        <item>Coordinator layout</item>
+        <item>Constraint layout</item>
+        <item>Card layout</item>
+        <item>Recycler View</item>
+        <item>Material Design</item>
+        <item>Themes</item>
+        <item>Navigation Drawer</item>
+        <item>Master detail flow</item>
     </string-array>
 </resources>
