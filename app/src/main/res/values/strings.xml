@@ -7,6 +7,7 @@
         <item>Core Programming</item>
         <item>Third Party Libraries</item>
         <item>APIs</item>
+        <item>Login Activity</item>
     </string-array>
 
     <!-- Layout Tasks-->
@@ -22,4 +23,18 @@
         <item>Navigation Drawer</item>
         <item>Master detail flow</item>
     </string-array>
+    <string name="title_activity_navigation_drawer">NavigationDrawerActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+
+
+
+    <!-- Forgot Password link-->
+    <string name="forgot_password_link">Forgot password? Click <u>Here</u></string>
+
+    <!--button texts-->
+    <string name="login_button">Login</string>
+    <string name="signup_button">SignUp</string>
 </resources>

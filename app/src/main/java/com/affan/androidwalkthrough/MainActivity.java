@@ -1,5 +1,6 @@
 package com.affan.androidwalkthrough;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,7 +11,10 @@ import android.widget.AdapterView;
 import android.widget.Toast;
 
 import com.affan.androidwalkthrough.adapters.CategoryListAdapter;
+import com.affan.androidwalkthrough.adapters.LayoutListAdapter;
 import com.affan.androidwalkthrough.listeners.OnCategoryItemClickListener;
+import com.affan.androidwalkthrough.ui.activities.LayoutListingActivity;
+import com.affan.androidwalkthrough.ui.activities.LoginActivity;
 
 import es.dmoral.toasty.Toasty;
 
@@ -18,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     RecyclerView categoryList;
     CategoryListAdapter adapter;
+    String[] categories;
     public static final String TITLE = "Categories";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,13 +33,45 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initiateList(){
-
+        categories = getResources().getStringArray(R.array.categories);
         categoryList = (RecyclerView) findViewById(R.id.categoriesList);
         categoryList.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new CategoryListAdapter(this, getResources().getStringArray(R.array.categories), new OnCategoryItemClickListener() {
+        adapter = new CategoryListAdapter(this,categories , new OnCategoryItemClickListener() {
             @Override
             public void onCategoryItemClickListener(CategoryListAdapter.CategoriesViewHolder view, int position) {
                 Toasty.info(getApplicationContext(),"You Clicked:"+ view.categoryName.getText().toString()).show();
+
+
+                switch (view.categoryName.getText().toString()){
+
+                    case "Layouts":{
+                        startActivity(new Intent(getApplicationContext(), LayoutListingActivity.class));
+                    }
+                    break;
+                    case "Core Programming":{
+
+                    }
+                    break;
+                    case "Third Party Libraries":{
+
+                    }
+                    break;
+                    case "APIs":{
+
+                    }
+                    break;
+                    case "Login Activity":{
+
+                        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                    }
+                    break;
+                }
+
+
+
+
+
+
             }
         });
         categoryList.setAdapter(adapter);

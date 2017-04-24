@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.affan.androidwalkthrough.R;
+import com.affan.androidwalkthrough.listeners.OnLayoutItemClickListener;
 
 import org.w3c.dom.Text;
 
@@ -19,10 +20,12 @@ public class LayoutListAdapter extends RecyclerView.Adapter<LayoutListAdapter.Vi
 
     private Context context;
     private String[] layoutList;
+    private OnLayoutItemClickListener mListener;
 
-    public LayoutListAdapter(Context context, String[] layoutList) {
+    public LayoutListAdapter(Context context, String[] layoutList,OnLayoutItemClickListener mListener) {
         this.context = context;
         this.layoutList = layoutList;
+        this.mListener = mListener;
     }
 
     @Override
@@ -33,9 +36,15 @@ public class LayoutListAdapter extends RecyclerView.Adapter<LayoutListAdapter.Vi
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
 
         holder.layoutName.setText(layoutList[position]);
+        holder.layoutName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.onLayoutItemClickListener(holder,position);
+            }
+        });
     }
 
     @Override
@@ -43,9 +52,9 @@ public class LayoutListAdapter extends RecyclerView.Adapter<LayoutListAdapter.Vi
         return layoutList.length;
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView layoutName;
+        public TextView layoutName;
 
         ViewHolder(View itemView) {
             super(itemView);
