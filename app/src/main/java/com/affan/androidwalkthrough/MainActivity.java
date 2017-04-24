@@ -42,25 +42,25 @@ public class MainActivity extends AppCompatActivity {
                 Toasty.info(getApplicationContext(),"You Clicked:"+ view.categoryName.getText().toString()).show();
 
 
-                switch (view.categoryName.getText().toString()){
+                switch (position){
 
-                    case "Layouts":{
+                    case 0:{
                         startActivity(new Intent(getApplicationContext(), LayoutListingActivity.class));
                     }
                     break;
-                    case "Core Programming":{
+                    case 1:{
 
                     }
                     break;
-                    case "Third Party Libraries":{
+                    case 2:{
 
                     }
                     break;
-                    case "APIs":{
+                    case 3:{
 
                     }
                     break;
-                    case "Login Activity":{
+                    case 4:{
 
                         startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                     }
